@@ -2,8 +2,8 @@
 #!/usr/bin/env python3
 import os
 import sys
-from products import add_product
-# from sales import record_sale, view_sales_history, sales_summary
+from products import add_product, view_products, update_product, delete_product
+from sales import record_sale, view_sales_history, sales_summary
 from database import initialize_database
 from utils import clear_screen, pause
 
@@ -37,18 +37,18 @@ def main():
 
         if choice == '1':
             add_product()
-        # elif choice == '2':
-        #     view_products()
-        # elif choice == '3':
-        #     update_product()
-        # elif choice == '4':
-        #     delete_product()
-        # elif choice == '5':
-        #     record_sale()
-        # elif choice == '6':
-        #     view_sales_history()
-        # elif choice == '7':
-        #     sales_summary()
+        elif choice == '2':
+            view_products()
+        elif choice == '3':
+            update_product()
+        elif choice == '4':
+            delete_product()
+        elif choice == '5':
+            record_sale()
+        elif choice == '6':
+            view_sales_history()
+        elif choice == '7':
+            sales_summary()
         elif choice == '8':
             print("\nThank you for using SmallBiz Inventory System!")
             print("Goodbye!")
