@@ -68,24 +68,24 @@ def add_product():
             result = execute_query(insert_query, (name, price, quantity))
             
             if result is not None:
-                print("\nSUCCESS!")
+                print("\n SUCCESS!")
                 print(f"Product '{name}' has been added to inventory successfully!")
                 print(f"Product ID: {result}")
                 print(f"You can now sell this product or update its details anytime.")
             else:
-                print("\nFAILED!")
+                print("\n FAILED!")
                 print("Could not add product to database. Please try again.")
                 
         else:
-            print("\nProduct addition cancelled.")
+            print("\n Product addition cancelled.")
             
     except mysql.connector.IntegrityError as e:
         if "Duplicate entry" in str(e):
-            print(f"\nERROR: A product with the name '{name}' already exists!")
+            print(f"\n ERROR: A product with the name '{name}' already exists!")
             print("Please choose a different product name or update the existing product.")
         else:
-            print(f"\nDatabase constraint error: {e}")
+            print(f"\n Database constraint error: {e}")
             
     except Exception as e:
-        print(f"\nAn unexpected error occurred: {e}")
+        print(f"\n An unexpected error occurred: {e}")
         print("Please contact system administrator if this problem persists.")
