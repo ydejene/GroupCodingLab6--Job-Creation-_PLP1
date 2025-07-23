@@ -1,5 +1,5 @@
-# The Inventory Management System Main Application
 #!/usr/bin/env python3
+
 import os
 import sys
 from products import add_product, view_products, update_product, delete_product
@@ -13,7 +13,7 @@ def display_menu():
     print("           SMALLBIZ INVENTORY MANAGEMENT SYSTEM")
     print("="*60)
     print("1. Add Product")
-    print("2. View All Products") 
+    print("2. View All Products")
     print("3. Update Product")
     print("4. Delete Product")
     print("5. Record Sale")
@@ -23,7 +23,6 @@ def display_menu():
     print("-"*60)
 
 def main():
-    # Initialize the database connection on startup
     print("Starting SmallBiz Inventory System...")
     if initialize_database():
         print("System ready!\n")

@@ -6,8 +6,8 @@ import getpass
 
 DATABASE_CONFIG = {
     'host': 'localhost',
-    'user': 'group6',
-    'password': 'root',
+    'user': 'root',
+    'password': '',
     'database': 'smallbiz_inventory'
 }
 
