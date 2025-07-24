@@ -89,3 +89,49 @@ def add_product():
     except Exception as e:
         print(f"\nAn unexpected error occurred: {e}")
         print("Please contact system administrator if this problem persists.")
+
+def view_products():
+   """Display all products in a formatted table"""
+   clear_screen()
+   print("="*60)
+   print("                   PRODUCT INVENTORY")
+   print("="*60)
+  
+   try:
+       query = "SELECT id, name, price, quantity, created_date FROM products ORDER BY name"
+       products = execute_query(query)
+      
+       if products and len(products) > 0:
+           print(f"{'ID':<5} {'Product Name':<25} {'Price':<10} {'Stock':<8} {'Date Added':<12}")
+           print("-" * 70)
+          
+           total_products = 0
+           total_value = 0
+          
+           for product in products:
+               product_id, name, price, quantity, created_date = product
+              
+               date_str = str(created_date)[:10] if created_date else "N/A"
+              
+               product_value = price * quantity
+               total_value += product_value
+               total_products += 1
+
+               print(f"{product_id:<5} {name[:24]:<25} ${price:<9.2f} {quantity:<8} {date_str:<12}")
+
+           print("-" * 70)
+           print(f"Total Products: {total_products}")
+           print(f"Total Inventory Value: ${total_value:.2f}")
+          
+       else:
+           print("No products found in inventory.")
+           print("\nWould you like to add your first product?")
+           print("Select option 1 from the main menu to add a product.")
+          
+   except Exception as e:
+       print(f" Error retrieving products: {e}")
+  
+   print("\n" + "="*60)
+   input("Press Enter to return to main menu...")
+
+
