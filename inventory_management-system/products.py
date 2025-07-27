@@ -148,7 +148,6 @@ def update_product():
        if not products or len(products) == 0:
            print("No products found in inventory.")
            print("Add some products first before updating.")
-           input("Press Enter to return to main menu...")
            return
 
        print(f"{'ID':<5} {'Product Name':<25} {'Price':<10} {'Stock':<8}")
@@ -169,7 +168,6 @@ def update_product():
        product = get_product_by_id(product_id)
        if not product:
            print(f"Product with ID {product_id} not found!")
-           input("Press Enter to return to main menu...")
            return
       
        current_id, current_name, current_price, current_quantity = product
@@ -296,7 +294,6 @@ def delete_product():
        if not products or len(products) == 0:
            print("No products found in inventory.")
            print("Nothing to delete.")
-           input("Press Enter to return to main menu...")
            return
 
        print(f"{'ID':<5} {'Product Name':<25} {'Price':<10} {'Stock':<8}")
@@ -317,7 +314,6 @@ def delete_product():
        product = get_product_by_id(product_id)
        if not product:
            print(f"Product with ID {product_id} not found!")
-           input("Press Enter to return to main menu...")
            return
       
        current_id, current_name, current_price, current_quantity = product
