@@ -4,6 +4,7 @@ import mysql.connector
 from mysql.connector import Error
 import getpass
 
+# configuring the database for regular user
 DATABASE_CONFIG = {
     'host': 'localhost',
     'user': 'group6',
@@ -11,6 +12,7 @@ DATABASE_CONFIG = {
     'database': 'smallbiz_inventory'
 }
 
+# configuring the root for setup
 ROOT_CONFIG = {
     'host': 'localhost',
     'user': 'root',
@@ -91,6 +93,7 @@ def create_tables():
     """Create required tables"""
     print("Creating tables...")
 
+# this is a dictionary we are gonna use to store a sql stmt that is going to create table
     tables = {
         'products': """
             CREATE TABLE IF NOT EXISTS products (
