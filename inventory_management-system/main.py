@@ -1,13 +1,22 @@
 #!/usr/bin/env python3
+# Standard library imports for system operations
+import os    # Operating system interface functions
+import sys   # System-specific parameters and functions
 
-import os
-import sys
+# Import product management functions from products module
 from products import add_product, view_products, update_product, delete_product
+
+# Import sales management functions from sales module
 from sales import record_sale, view_sales_history, sales_summary
+
+# Import database initialization function
 from database import initialize_database
+
+# Import utility functions for user interface
 from utils import clear_screen, pause
 
 def display_menu():
+    # Clears screen and displays the main menu with all available options
     clear_screen()
     print("="*60)
     print("           SMALLBIZ INVENTORY MANAGEMENT SYSTEM")
@@ -23,17 +32,20 @@ def display_menu():
     print("-"*60)
 
 def main():
+    # Initialize database connection at startup
     print("Starting SmallBiz Inventory System...")
     if initialize_database():
         print("System ready!\n")
     else:
         print("Failed to connect to database. Please check your MySQL connection.")
         return
-
+    
+    # Main application loop - keeps program running until user exits
     while True:
         display_menu()
         choice = input("Select an option (1-8): ").strip()
-
+        
+        # Process user menu selection and call appropriate function
         if choice == '1':
             add_product()
         elif choice == '2':
@@ -49,13 +61,15 @@ def main():
         elif choice == '7':
             sales_summary()
         elif choice == '8':
+            # Exit the application gracefully
             print("\nThank you for using SmallBiz Inventory System!")
             print("Goodbye!")
             break
         else:
             print("Invalid option. Please try again.")
-
+        
         pause()
 
+# Run the application when script is executed directly
 if __name__ == "__main__":
     main()
