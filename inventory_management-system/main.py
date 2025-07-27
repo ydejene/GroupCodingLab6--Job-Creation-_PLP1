@@ -1,18 +1,14 @@
 #!/usr/bin/env python3
+
+
 # Standard library imports for system operations
-import os    # Operating system interface functions
-import sys   # System-specific parameters and functions
+import os
+import sys
 
-# Import product management functions from products module
+
 from products import add_product, view_products, update_product, delete_product
-
-# Import sales management functions from sales module
 from sales import record_sale, view_sales_history, sales_summary
-
-# Import database initialization function
 from database import initialize_database
-
-# Import utility functions for user interface
 from utils import clear_screen, pause
 
 def display_menu():
