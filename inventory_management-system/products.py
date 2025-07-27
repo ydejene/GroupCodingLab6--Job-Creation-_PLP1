@@ -131,9 +131,6 @@ def view_products():
    except Exception as e:
        print(f" Error retrieving products: {e}")
   
-   print("\n" + "="*60)
-   input("Press Enter to return to main menu...")
-
 def update_product():
    """Update an existing product's information"""
    clear_screen()
@@ -281,9 +278,6 @@ def update_product():
           
    except Exception as e:
        print(f"Error updating product: {e}")
-  
-   print("\n" + "="*60)
-   input("Press Enter to return to main menu...")
 
 def delete_product():
    """Delete a product from the inventory"""
@@ -354,9 +348,6 @@ def delete_product():
           
    except Exception as e:
        print(f"Error deleting product: {e}")
-  
-   print("\n" + "="*60)
-   input("Press Enter to return to main menu...")
 
 def get_product_by_id(product_id):
    """Get single product by ID"""
