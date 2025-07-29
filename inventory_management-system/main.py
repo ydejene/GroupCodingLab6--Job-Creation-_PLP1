@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import utils.transport
+import utils.session
 import os
 import sys
 from products import add_product, view_products, update_product, delete_product
